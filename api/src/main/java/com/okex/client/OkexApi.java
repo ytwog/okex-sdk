@@ -148,7 +148,7 @@ public class OkexApi {
         Map<String, String> parameters = Map.of(
                 "ccy", ccy,
                 "amt", amount.toString(),
-                "desc", dest.id,
+                "dest", dest.id,
                 "toAddr", toAddr,
                 "chain", chain,
                 "fee", fee
