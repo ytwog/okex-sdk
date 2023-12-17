@@ -16,11 +16,13 @@ import com.okex.model.AccountBalance;
 import com.okex.model.AssetBalance;
 import com.okex.model.AssetCurrency;
 import com.okex.model.DepositAddress;
+import com.okex.model.Instrument;
 import com.okex.model.OrderBook;
 import com.okex.model.OrderDetails;
-import com.okex.model.Ticker;
-import com.okex.model.Instrument;
 import com.okex.model.PlaceOrderResult;
+import com.okex.model.Ticker;
+import com.okex.model.TransferFundsResult;
+import com.okex.model.TransferFundsState;
 import com.okex.model.WithdrawResult;
 import com.okex.utils.OkexRequestUtils;
 
@@ -163,5 +165,27 @@ public class OkexApi {
                 "ccy", ccy
         );
         return okexClient.execute(OkexEndpoint.DEPOSIT_ADDRESS, parameters);
+    }
+
+    public TransferFundsResult transferFunds(
+            String ccy,
+            String amt,
+            String from,
+            String to) throws Exception
+    {
+        Map<String, String> parameters = Map.of(
+                "ccy", ccy,
+                "amt", amt,
+                "from", from,
+                "to", to
+        );
+        return OkexRequestUtils.findFirstOrThrow(okexClient.execute(OkexEndpoint.TRANSFER_FUNDS, parameters), "transfer funds");
+    }
+
+    public TransferFundsState getTransferFundsState(
+            String transId) throws Exception
+    {
+        Map<String, String> parameters = Map.of("transId", transId);
+        return OkexRequestUtils.findFirstOrThrow(okexClient.execute(OkexEndpoint.TRANSFER_FUNDS_STATE, parameters), "transfer funds");
     }
 }

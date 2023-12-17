@@ -16,6 +16,8 @@ public enum OkexEndpoint {
     ASSET_BALANCES(OkexApiVersion.V5, OkexEndpointType.ASSET, "/balances", HttpMethod.GET, TypeConsts.ASSET_BALANCES_LIST_TYPE),
     DEPOSIT_ADDRESS(OkexApiVersion.V5, OkexEndpointType.ASSET, "/deposit-address", HttpMethod.GET, TypeConsts.DEPOSIT_ADDRESS_LIST_TYPE),
     WITHDRAW(OkexApiVersion.V5, OkexEndpointType.ASSET, "/withdrawal", HttpMethod.POST, TypeConsts.WITHDRAW_LIST_TYPE),
+    TRANSFER_FUNDS(OkexApiVersion.V5, OkexEndpointType.ASSET, "/transfer", HttpMethod.POST, TypeConsts.TRANSFER_FUNDS_LIST_TYPE),
+    TRANSFER_FUNDS_STATE(OkexApiVersion.V5, OkexEndpointType.ASSET, "/transfer-state", HttpMethod.GET, TypeConsts.TRANSFER_FUNDS_STATE_LIST_TYPE),
     PLACE_ORDER(OkexApiVersion.V5, OkexEndpointType.TRADE, "/order", HttpMethod.POST, TypeConsts.PLACE_ORDER_TYPE),
     ORDER_DETAILS(OkexApiVersion.V5, OkexEndpointType.TRADE, "/order", HttpMethod.GET, TypeConsts.ORDER_DETAILS_LIST_TYPE),
     ;

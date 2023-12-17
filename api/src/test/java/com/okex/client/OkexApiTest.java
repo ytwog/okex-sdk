@@ -3,12 +3,7 @@ package com.okex.client;
 import java.math.BigDecimal;
 import java.util.Optional;
 
-import com.okex.consts.InstType;
-import com.okex.consts.OkexTestingSettings;
-import com.okex.consts.OrderSide;
-import com.okex.consts.OrderType;
-import com.okex.consts.TradeMode;
-import com.okex.consts.WithdrawalMethod;
+import com.okex.consts.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -106,5 +101,15 @@ class OkexApiTest {
     @Test
     public void testDepositAddresses() throws Exception {
         System.out.println(okexApi.getDepositAddresses("BTC"));
+    }
+
+    @Test
+    public void testTransferFunds() throws Exception {
+        System.out.println(okexApi.transferFunds("USDT", "1.5", TransferSide.TRADING.value, TransferSide.FUNDING.value));
+    }
+
+    @Test
+    public void testTransferFundsState() throws Exception {
+        System.out.println(okexApi.getTransferFundsState("708809840"));
     }
 }
