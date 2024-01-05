@@ -4,7 +4,18 @@ import java.lang.reflect.Type;
 import java.util.List;
 
 import com.google.gson.reflect.TypeToken;
-import com.okex.model.*;
+import com.okex.model.AccountBalance;
+import com.okex.model.AssetBalance;
+import com.okex.model.AssetCurrency;
+import com.okex.model.DepositAddress;
+import com.okex.model.Instrument;
+import com.okex.model.OrderBook;
+import com.okex.model.OrderDetails;
+import com.okex.model.PlaceOrderResult;
+import com.okex.model.Ticker;
+import com.okex.model.TransferFundsResult;
+import com.okex.model.TransferFundsState;
+import com.okex.model.WithdrawResult;
 
 public class TypeConsts {
     public static final Type ACCOUNT_BALANCE_LIST_TYPE = TypeToken.getParameterized(List.class, AccountBalance.class).getType();

@@ -3,7 +3,13 @@ package com.okex.client;
 import java.math.BigDecimal;
 import java.util.Optional;
 
-import com.okex.consts.*;
+import com.okex.consts.InstType;
+import com.okex.consts.OkexTestingSettings;
+import com.okex.consts.OrderSide;
+import com.okex.consts.OrderType;
+import com.okex.consts.TradeMode;
+import com.okex.consts.TransferSide;
+import com.okex.consts.WithdrawalMethod;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -65,6 +71,7 @@ class OkexApiTest {
 
     @Test
     public void testPlaceOrder() throws Exception {
+        // buy
         System.out.println(okexApi.placeOrder(
                 "BTC-USDT",
                 TradeMode.CASH,
@@ -72,13 +79,14 @@ class OkexApiTest {
                 OrderType.MARKET,
                 BigDecimal.valueOf(1.0)
         ));
-//        System.out.println(okexApi.placeOrder(
-//                "BTC-USDT",
-//                TradeMode.CASH,
-//                OrderSide.SELL,
-//                OrderType.MARKET,
-//                BigDecimal.valueOf(0.0005)
-//        ));
+        // sell
+        System.out.println(okexApi.placeOrder(
+                "BTC-USDT",
+                TradeMode.CASH,
+                OrderSide.SELL,
+                OrderType.MARKET,
+                BigDecimal.valueOf(0.0005)
+        ));
     }
 
     @Test
